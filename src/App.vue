@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <h1> Liczba kliknięć: {{counter}} </h1>
+    <button v-on:click="incrementCounter">Wciśnij mnie</button>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +9,22 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  //ta instru
+  data(){
+    return{
+      counter: 0
+    }
+  },
+  methods:{
+    incrementCounter(){
+      this.counter++;
+    }
+  }
+}
+</script>
 
 <style>
 #app {
